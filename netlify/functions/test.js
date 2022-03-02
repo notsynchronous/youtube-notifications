@@ -1,6 +1,7 @@
 exports.handler = async (event, context) => {
-    return {
-      statusCode: 200,
-      body: "Hello, World"
-    };
+  console.log(event.body);
+  return {
+    statusCode: 200,
+    body: "Hello, World",
   };
+};
