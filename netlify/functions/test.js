@@ -1,6 +1,7 @@
 exports.handler = async (event, context) => {
   if (event.httpMethod === "POST") {
     // Do something here.
+    console.log(event.body);
   }
 
   if (event.httpMethod === "GET") {
