@@ -1,4 +1,5 @@
 const axios = require("axios").default;
+const { schedule } = require("@netlify/functions");
 
 var qs = require("qs");
 var data = qs.stringify({
@@ -17,7 +18,7 @@ var config = {
   data: data,
 };
 
-exports.handler = function (event, context, callback) {
+const handler = function (event, context, callback) {
   console.log(data, config);
   axios(config)
     .then(function (response) {
@@ -27,3 +28,5 @@ exports.handler = function (event, context, callback) {
       console.log(error);
     });
 };
+
+module.exports.handler = schedule("@weekly", handler);
