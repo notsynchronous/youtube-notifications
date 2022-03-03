@@ -1,6 +1,12 @@
 exports.handler = async (event, context) => {
-  return {
-    statusCode: 200,
-    body: event.queryStringParameters["hub.challenge"],
-  };
+  if (event.httpMethod === "POST") {
+    // Do something here.
+  }
+
+  if (event.httpMethod === "GET") {
+    return {
+      statusCode: 200,
+      body: event.queryStringParameters["hub.challenge"],
+    };
+  }
 };
