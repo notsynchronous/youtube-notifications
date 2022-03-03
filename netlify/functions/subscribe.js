@@ -18,6 +18,7 @@ var config = {
 };
 
 exports.handler = function (event, context, callback) {
+  console.log(data, config);
   axios(config)
     .then(function (response) {
       console.log(JSON.stringify(response.data));
