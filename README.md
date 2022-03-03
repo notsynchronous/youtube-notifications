@@ -1,5 +1,9 @@
 # youtube-notifications
 
+🔔 do-it-yourself notifications for Youtube!
+
+Can you subscribe to multiple channels using 1 callback server?
+
 ## Useful Links
 
 Google Hub for checking subscription status - https://pubsubhubbub.appspot.com/subscribe
