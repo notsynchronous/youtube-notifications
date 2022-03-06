@@ -1,11 +1,14 @@
 const { XMLParser } = require("fast-xml-parser");
-const differenceInMinutes = require("date-fns/differenceInMinutes");
+const { differenceInMinutes, parseISO } = require("date-fns");
 
 exports.handler = async (event, context) => {
   if (event.httpMethod === "POST") {
     const parser = new XMLParser();
     let json = parser.parse(event.body);
-    const { published, updated } = json.feed.entry;
+    let { published, updated } = json.feed.entry;
+    published = parseISO(published);
+    updated = parseISO(updated);
+
     console.log(json);
 
     // if the difference is less than 10
