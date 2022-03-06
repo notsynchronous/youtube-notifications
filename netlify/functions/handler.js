@@ -1,7 +1,11 @@
+const { XMLParser } = require("fast-xml-parser");
+
 exports.handler = async (event, context) => {
   if (event.httpMethod === "POST") {
     // Do something here.
-    console.log(event.body);
+    const parser = new XMLParser();
+    let jsonObj = parser.parse(event.body);
+    console.log(jsonObj);
     return {
       statusCode: 200,
     };
