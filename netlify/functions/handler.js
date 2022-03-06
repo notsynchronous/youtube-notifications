@@ -1,11 +1,22 @@
 const { XMLParser } = require("fast-xml-parser");
+const differenceInMinutes = require("date-fns/differenceInMinutes");
 
 exports.handler = async (event, context) => {
   if (event.httpMethod === "POST") {
-    // Do something here.
     const parser = new XMLParser();
-    let jsonObj = parser.parse(event.body);
-    console.log(jsonObj);
+    let json = parser.parse(event.body);
+    const { published, updated } = json.feed.entry;
+    console.log(json);
+
+    // if the difference is less than 10
+    // probably a new video
+    if (differenceInMinutes(published, updated) < 10) {
+      console.log(differenceInMinutes(published, updated));
+    } else {
+      // otherwise an update.
+      console.log(differenceInMinutes(published, updated));
+    }
+
     return {
       statusCode: 200,
     };
