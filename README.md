@@ -1,8 +1,14 @@
 # youtube-notifications
 
-🔔 do-it-yourself notifications for Youtube!
+🔔 Do-It-Yourself notifications for Youtube!
 
-Can you subscribe to multiple channels using 1 callback server?
+Use a serverless platform (like `Netlify` or `Vercel`) to build out a notification system for public uploads on Youtube.
+
+### Use Cases:
+
+- Send messages to channels in Discord/Slack.
+- Run actions on videos after upload.
+- Subscribe to multiple channels.
 
 ## Useful Links
 

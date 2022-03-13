@@ -9,15 +9,19 @@ exports.handler = async (event, context) => {
     published = parseISO(published);
     updated = parseISO(updated);
 
-    console.log(json);
-
     // if the difference is less than 10
     // probably a new video
     if (differenceInMinutes(published, updated) < 10) {
-      console.log(differenceInMinutes(published, updated));
+      console.log(
+        differenceInMinutes(published, updated),
+        "Less than 10 minutes."
+      );
     } else {
       // otherwise an update.
-      console.log(differenceInMinutes(published, updated));
+      console.log(
+        differenceInMinutes(published, updated),
+        "More than 10 minutes."
+      );
     }
 
     return {
